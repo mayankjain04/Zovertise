@@ -1,0 +1,66 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Dark Mode */
+.dark-mode {
+    background: #121212;
+    color: #ffffff;
+}
+
+.dark-mode .card {
+    background: #333;
+    color: white;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar.bg-primary {
+    background-color: #007bff !important;
+}
+
+/* Sections */
+.section {
+    padding: 80px 20px;
+    display: none;
+}
+
+.section:not(.hidden) {
+    display: block;
+}
+
+.background {
+    position: fixed; /* Stays in place even when scrolling */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: url('https://static.vecteezy.com/system/resources/previews/011/892/863/non_2x/advertise-writing-design-on-a-green-background-free-vector.jpg') no-repeat center center fixed;
+    background-size: cover;
+    z-index: -1; /* Ensures it stays behind all content */
+    opacity: .7;
+}
+
+
+/* Hero */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero.hidden {
+    display: none;
+}
