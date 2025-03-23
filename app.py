@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify, Response
+from flask_cors import CORS  # Import CORS
 import os
 import requests
 from dotenv import load_dotenv
@@ -6,10 +7,10 @@ from dotenv import load_dotenv
 # Load environment variables
 load_dotenv()
 
-
 app = Flask(__name__)
+CORS(app, origins=["https://zovertise.vercel.app"])
 
-# Brevo API Key (Hidden in Environment Variables)
+# Brevo API Key
 BREVO_API_KEY = os.getenv("BREVO_API_KEY")
 TEMPLATE_ID = 1  # Set in your .env file
 
@@ -17,7 +18,6 @@ TEMPLATE_ID = 1  # Set in your .env file
 def index():
     return Response('backend is running')
 
-# Route to handle form submission
 @app.route("/send-email", methods=["POST"])
 def send_email():
     try:
