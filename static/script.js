@@ -61,9 +61,12 @@ document.getElementById("brevoForm").addEventListener("submit", async function (
         });
 
         const result = await response.json();
-        alert(result.message || "Error sending email");
+        console.log(result.message || "Error sending email");
         if (response.ok) {
+            alert('Thanks for choosing Zovertise. We just sent you a mail regarding further communication.')
             this.reset();
+        } else {
+            alert('Thanks for choosing Zovertise. The emailing server is down, we will reach out to you soon.')
         }
     } catch (error) {
         alert("Error: " + error);
