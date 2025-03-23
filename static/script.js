@@ -54,7 +54,7 @@ document.getElementById("brevoForm").addEventListener("submit", async function (
     };
 
     try {
-        const response = await fetch("http://127.0.0.1:5000/send-email", { // Replace with your actual backend URL
+        const response = await fetch("https://zovertise.onrender.com/send-email", { // Replace with your actual backend URL
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(formData)
